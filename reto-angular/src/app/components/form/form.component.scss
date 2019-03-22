@@ -1,0 +1,85 @@
+.nuevo-negocio{
+  padding: 50px 50px 0px 50px;
+  margin: 120px 160px 0px 160px;
+  background-color: #ccc;
+  height: 100vh;
+
+  &__title{
+    background-color: #444;
+    font-size: 25px;
+    width: 50%;
+    color: #ccc;
+    padding: 10px;
+  }
+
+  &__description{
+    width: 75%;
+    padding-top: 15px;
+  }
+
+  .form{
+
+
+
+    &__btn{
+      padding:20px;
+      position: absolute;
+      right:200px;
+
+
+      .primary{
+        background-color: rgb(236, 110, 52);
+        padding: 10px 30px;
+        border-radius:10px;
+        font-size: 15px;
+      }
+
+      .secondary{
+        padding: 10px 30px;
+        border-radius:10px;
+        font-size: 15px;
+        margin-right: 20px;
+      }
+    }
+
+  &__divider{
+    display: flex;
+    padding-top: 25px;
+    justify-content: space-between;
+
+    select{
+      margin-top: 5px;
+      width: 120%;
+      height: 50%;
+    }
+  }
+
+  &__label {
+    background-color: #444;
+    padding: 10px;
+    color: #ccc;
+    display:block;
+    padding-right: 60px;
+  }
+
+  &__input{
+    width: 120%;
+    margin-top: 5px;
+    padding: 10px;
+  }
+
+  &__textarea{
+    padding-top:50px;
+    width: 20%;
+
+    &__label{
+      padding-top: 10px;
+    }
+
+    textarea{
+      margin-top: 10px;
+      width: 500%
+    }
+  }
+}
+}
