@@ -22,7 +22,7 @@
         <div>
           <label for="size" class="form__label">Tamano de la empresa</label>
           <select name="size" class="form__select" formControlName="size">
-            <option value="" *ngFor="let size of sizes" [value]="size">{{size.key}}</option>
+            <option *ngFor="let size of sizes" [value]="size.key">{{size.key}}</option>
           </select>
           <span class="form__error" *ngIf="(size.dirty || size.touched) && size.invalid && size.errors.required">
             Campo Obligatorio*
@@ -41,7 +41,7 @@
         <div>
           <label for="country" class="form__label">Pais</label>
           <select name="country" class="form__select" formControlName="country">
-            <option value="" *ngFor="let country of countries" [value]="country">{{country.key}}</option>
+            <option *ngFor="let country of countries" [value]="country.key">{{country.key}}</option>
           </select>
           <span class="form__error" *ngIf="(country.dirty || country.touched) && country.invalid && country.errors.required">
             Campo Obligatorio*
