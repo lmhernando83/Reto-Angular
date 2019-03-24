@@ -7,7 +7,7 @@ const API = environment.api_url;
 
 @Injectable()
 
-export class FormService {
+export class CompaniesService {
 
   companies: Array<CompanyModel>;
 
@@ -24,12 +24,13 @@ export class FormService {
 
 
   createCompany(event: CompanyModel){
+
     let observable
     if(event.id){
-      observable =  this.httpClient.put(`${API}/${event.id}`, event)
+      observable =  this.httpClient.put(`${API}/company/${event.id}`, event)
     }else{
-      observable = this.httpClient.post(API, event)
+      observable = this.httpClient.post(`${API}/company`, event)
     }
-    return observable.toPromise().then(()=> this.fetchCompanies);
+    return observable.toPromise().then((response)=> response);
   }
 }

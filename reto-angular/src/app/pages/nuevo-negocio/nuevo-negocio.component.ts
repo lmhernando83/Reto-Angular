@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CompaniesService } from 'src/app/service/companies.service';
 
 @Component({
   selector: 'nuevo-negocio',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class NuevoNegocioComponent {
 
+  constructor( private companiesService: CompaniesService){
+  }
+
+
+
+  onSave(form) {
+    this.companiesService.createCompany(form).then((response)=> {
+      console.log('formulario creado', response)
+    })
+  }
 }

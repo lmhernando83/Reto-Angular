@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormService } from 'src/app/service/form.service';
+import { CompaniesService } from 'src/app/service/companies.service';
 import { CompanyModel } from 'src/app/model/company.model';
 
 @Component({
@@ -10,9 +10,9 @@ import { CompanyModel } from 'src/app/model/company.model';
 
 export class NegociosComponent {
   companies: Array<CompanyModel>;
-  constructor(private formService: FormService) {
+  constructor(private companiesService: CompaniesService) {
 
-    this.formService.fetchCompanies().then((companies) => {
+    this.companiesService.fetchCompanies().then((companies) => {
       this.companies = companies
     })
   }

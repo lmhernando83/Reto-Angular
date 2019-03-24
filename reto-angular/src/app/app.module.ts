@@ -10,7 +10,7 @@ import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BusinessComponent } from './components/business/business.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormService } from './service/form.service';
+import { CompaniesService } from './service/companies.service';
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import { FormService } from './service/form.service';
 
   ],
   providers: [
-    FormService
+    CompaniesService
   ],
   bootstrap: [AppComponent]
 })
