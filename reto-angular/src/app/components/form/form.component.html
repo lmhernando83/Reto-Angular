@@ -1,56 +1,72 @@
 <div class="nuevo-negocio">
     <h1 class="nuevo-negocio__title">Registrar Nuevo Negocio</h1>
 
-    <p class="nuevo-negocio__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque sed eaque labore repellendus ut voluptatem, facilis culpa sequi ea vel id quos dolor molestias quisquam repudiandae corrupti consequatur tenetur!</p>
+    <p class="nuevo-negocio__description">Para registrar un negocio rellene correctamente la informacion de los siguientes campos.</p>
 
-    <form class="form">
+    <form class="form" [formGroup]="form" (ngSubmit)="onSave(form.value)">
       <div class="form__divider">
         <div>
-          <label for="nombre" class="form__label">Nombre</label>
-          <input type="text" class="form__input">
+          <label for="name" class="form__label">Nombre</label>
+          <input type="text" name="name" class="form__input" formControlName="name">
+          <span class="form__error" *ngIf="(name.dirty || name.touched) && name.invalid && name.errors.required">
+            Campo Obligatorio*
+          </span>
         </div>
         <div>
-          <label for="fecha" class="form__label">Fecha de Creacion</label>
-          <input type="text" class="form__input">
+          <label for="createdAt" class="form__label">Fecha de Creacion</label>
+          <input type="text" name="createdAt" class="form__input" formControlName="createdAt">
+          <span class="form__error" *ngIf="(createdAt.dirty || createdAt.touched) && createdAt.invalid && createdAt.errors.required">
+            Campo Obligatorio*
+          </span>
         </div>
         <div>
-          <label for="empresa" class="form__label">Tamano de la empresa</label>
-          <select class="form__select">
-            <option value="1">Pequena</option>
-            <option value="2">Mediana</option>
-            <option value="3">Grande</option>
+          <label for="size" class="form__label">Tamano de la empresa</label>
+          <select name="size" class="form__select" formControlName="size">
+            <option value="" *ngFor="let size of sizes" [value]="size">{{size.key}}</option>
           </select>
+          <span class="form__error" *ngIf="(size.dirty || size.touched) && size.invalid && size.errors.required">
+            Campo Obligatorio*
+          </span>
         </div>
       </div>
 
       <div class="form__divider">
         <div>
-          <label for="direccion" class="form__label">Direccion</label>
-          <input type="text" class="form__input">
+          <label for="address" class="form__label">Direccion</label>
+          <input type="text" name="address" class="form__input" formControlName="address">
+          <span class="form__error" *ngIf="(address.dirty || address.touched) && address.invalid && address.errors.required">
+            Campo Obligatorio*
+          </span>
         </div>
         <div>
-          <label for="pais" class="form__label">Pais</label>
-          <select class="form__select">
-            <option value="1">Espana</option>
-            <option value="2">Portugal</option>
-            <option value="3">Francia</option>
-            <option value="4">Italia</option>
+          <label for="country" class="form__label">Pais</label>
+          <select name="country" class="form__select" formControlName="country">
+            <option value="" *ngFor="let country of countries" [value]="country">{{country.key}}</option>
           </select>
+          <span class="form__error" *ngIf="(country.dirty || country.touched) && country.invalid && country.errors.required">
+            Campo Obligatorio*
+          </span>
         </div>
         <div>
-          <label for="telefono" class="form__label">Telefono</label>
-          <input type="text" class="form__input">
+          <label for="phone" class="form__label">Telefono</label>
+          <input type="text" name="phone" class="form__input" formControlName="phone">
+          <span class="form__error" *ngIf="(phone.dirty || phone.touched) && phone.invalid && phone.errors.required">
+            Campo Obligatorio*
+          </span>
         </div>
       </div>
 
       <div class="form__textarea">
-          <label for="descripcion" class="form__label">Descripcion</label>
-          <textarea name="" id="" cols="30" rows="10" class="form__textarea"></textarea>
+          <label for="description" class="form__label">Descripcion</label>
+          <textarea name="description" id="" cols="30" rows="10" class="form__textarea" formControlName="description"></textarea>
+          <span class="form__error" *ngIf="(description.dirty || description.touched) && description.invalid && description.errors.required">
+            Campo Obligatorio*
+          </span>
       </div>
 
       <div class="form__btn">
         <button type="reset" class="secondary">Borrar</button>
-        <button type="submit" class="primary">Enviar</button>
+        <button type="submit" class="primary" [disabled]="!form.valid">Enviar</button>
       </div>
     </form>
   </div>
