@@ -1,4 +1,3 @@
-
 header{
   display:flex;
   justify-content: space-between;
@@ -17,6 +16,11 @@ header{
         text-decoration:none;
         color:grey
       }
+
+      a.active {
+        color: red;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -30,14 +34,13 @@ header{
     position:absolute;
   }
 
+  &__two{
+    margin-left: 15px;
+  }
 
-&__two{
-  margin-left: 15px;
+  &__three{
+    margin-top: -10px;
+    margin-left: 7px;
+  }
 }
 
-&__three{
-  margin-top: -10px;
-  margin-left: 7px;
-}
-
-}
