@@ -1,1 +1,6 @@
-<app-business></app-business>
+<h1>Mis negocios</h1>
+<ul>
+  <li *ngFor="let company of companies">
+    <app-business [business]="company"></app-business>
+  </li>
+</ul>

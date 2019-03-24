@@ -1,35 +1,33 @@
 <div class="mis-negocios">
-  <h1 class="mis-negocios__title">Mis Negocios</h1>
-
     <div class="card">
-      <h2 class="card__title">Nombre negocio 1</h2>
+      <h2 class="card__title">{{ business.name }}</h2>
         <div class="card__divider">
           <div>
-            <h3 class="card__label card--wider">Description</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque sed eaque labore repellendus ut voluptatem, facilis culpa sequi ea vel id quos dolor molestias quisquam repudiandae corrupti consequatur tenetur!</p>
+            <h3 class="card__label card--wider">description</h3>
+            <p>{{ business.description }}</p>
           </div>
           <div>
             <h3 class="card__label">Fecha de creacion</h3>
-            <p>22/09/2017</p>
+            <p>{{ business.createdAt }}</p>
           </div>
         </div>
 
         <div class="card__divider">
           <div>
             <h3 class="card__label">Direccion</h3>
-            <p>Direccion falsa 123</p>
+            <p>{{ business.address }}</p>
           </div>
           <div>
             <h3 class="card__label">Pais</h3>
-            <p>Espana</p>
+            <p>{{ business.country }}</p>
           </div>
           <div>
             <h3 class="card__label">Tamano</h3>
-            <p>Pequena</p>
+            <p>{{ business.size }}</p>
           </div>
           <div>
             <h3 class="card__label">Telefono</h3>
-            <p>666-999-222</p>
+            <p>{{ business.phone }}</p>
           </div>
         </div>
     </div>
