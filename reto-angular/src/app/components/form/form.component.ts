@@ -2,13 +2,13 @@ import { Component, Output, EventEmitter, Input, OnInit, OnChanges, SimpleChange
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-form',
   templateUrl: 'form.component.html',
   styleUrls: ['form.component.scss']
 })
 export class FormComponent implements OnInit, OnChanges {
+
   sizes = [
     {
       key: 'Pequeña',
@@ -40,6 +40,8 @@ export class FormComponent implements OnInit, OnChanges {
     key: 'Italia',
     value: '4'
   }];
+
+
 
   @Input() edit;
 
@@ -100,5 +102,4 @@ export class FormComponent implements OnInit, OnChanges {
     this.save.emit(value);
     this.form.reset();
   }
-
 }

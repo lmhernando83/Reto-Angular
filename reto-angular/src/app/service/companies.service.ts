@@ -24,13 +24,14 @@ export class CompaniesService {
 
 
   createCompany(event: CompanyModel){
-
     let observable
     if(event.id){
       observable =  this.httpClient.put(`${API}/company/${event.id}`, event)
     }else{
-      observable = this.httpClient.post(`${API}/company`, event)
+      observable = this.httpClient.post(`${API}/company`, event);
     }
-    return observable.toPromise().then((response)=> response);
+    return observable.toPromise().then((response)=> response = true);
   }
 }
+
+

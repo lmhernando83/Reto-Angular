@@ -69,13 +69,13 @@
         <button type="submit" class="primary" [disabled]="!form.valid">Enviar</button>
       </div>
 
-      <div>
+      <div *ngIf="result === true; else error">
         <div class="message--success">
           <span></span>
           <p>Registro realizado correctamente</p>
         </div>
       </div>
-      <ng-template>
+      <ng-template *ngIf="error">
         <div class="message">
           <span></span>
           <p>Hubo un error durante el registro</p>
