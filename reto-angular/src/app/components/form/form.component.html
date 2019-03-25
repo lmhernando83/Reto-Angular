@@ -68,18 +68,5 @@
         <button type="reset" class="secondary">Borrar</button>
         <button type="submit" class="primary" [disabled]="!form.valid">Enviar</button>
       </div>
-
-      <div *ngIf="result">
-        <div class="message--success">
-          <span></span>
-          <p>Registro realizado correctamente</p>
-        </div>
-      </div>
-      <ng-template *ngIf="!error">
-        <div class="message">
-          <span></span>
-          <p>Hubo un error durante el registro</p>
-        </div>
-      </ng-template>
     </form>
   </div>

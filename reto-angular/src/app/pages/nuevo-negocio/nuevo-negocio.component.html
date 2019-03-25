@@ -1,1 +1,10 @@
 <app-form (save)="onSave($event)"></app-form>
+
+<div class="message--success" *ngIf="result">
+  <span></span>
+  <p>{{result}}</p>
+</div>
+<div class="message" *ngIf="error">
+  <span></span>
+  <p>{{error}}</p>
+</div>
