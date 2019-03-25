@@ -9,6 +9,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit, OnChanges {
 
+  result = null;
+  error = null;
+
   sizes = [
     {
       key: 'Pequeña',
@@ -101,5 +104,7 @@ export class FormComponent implements OnInit, OnChanges {
   onSave(value) {
     this.save.emit(value);
     this.form.reset();
+    this.result = true;
+    this.error = false;
   }
 }

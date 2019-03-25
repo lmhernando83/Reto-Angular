@@ -49,8 +49,8 @@
         </div>
         <div>
           <label for="phone" class="form__label">Telefono</label>
-          <input type="text" name="phone" class="form__input" formControlName="phone">
-          <span class="form__error" *ngIf="(phone.dirty || phone.touched) && phone.invalid && phone.errors.required">
+          <input type="text" name="phone" class="form__input" formControlName="phone" pattern="^[0-9]{9}$">
+          <span class="form__error" *ngIf="(phone.dirty || phone.touched) && phone.invalid && phone.errors.required && phone.pattern">
             Campo Obligatorio*
           </span>
         </div>
@@ -69,13 +69,13 @@
         <button type="submit" class="primary" [disabled]="!form.valid">Enviar</button>
       </div>
 
-      <div *ngIf="result === true; else error">
+      <div *ngIf="result">
         <div class="message--success">
           <span></span>
           <p>Registro realizado correctamente</p>
         </div>
       </div>
-      <ng-template *ngIf="error">
+      <ng-template *ngIf="!error">
         <div class="message">
           <span></span>
           <p>Hubo un error durante el registro</p>

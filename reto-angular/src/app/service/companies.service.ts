@@ -30,7 +30,7 @@ export class CompaniesService {
     }else{
       observable = this.httpClient.post(`${API}/company`, event);
     }
-    return observable.toPromise().then((response)=> response = true);
+    return observable.toPromise().then((response)=> response);
   }
 }
 

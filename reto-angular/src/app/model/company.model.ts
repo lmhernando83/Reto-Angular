@@ -5,6 +5,6 @@ export class CompanyModel{
   size: string;
   address: string;
   country: string;
-  phone: string;
+  phone: number;
   description: string;
 }
